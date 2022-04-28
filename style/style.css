@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+:root {
+	--facebook-color: #3b5999;
+	--instagram-color: #e1306c;
+	--youtube-color: #de463b;
+	--twitter-color: #46c1f6;
+	--github-color: #333;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+.main{
+    height: 100vh;
+    background-color: #FEFBE7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main .icon{
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+}
+
+.main .icon i{
+    height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	font-size: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main .icon span{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: #fff;
+    transform: translateX(-50%);
+    padding: 10px 18px;
+	font-size: 20px;
+	font-weight: 500;
+	border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.main .icon:hover span{
+    opacity: 1;
+    pointer-events: auto;
+    top: -70px;
+}
+
+.tooltip , 
+.icon i{
+    transition: 0.3s ;
+}
+
+.icon:hover i{
+    color: #fff;
+}
+
+.facebook .tooltip:before,
+.facebook:hover i,
+.facebook .tooltip {
+	background: var(--facebook-color);
+}
+.github .tooltip:before,
+.github:hover i,
+.github .tooltip {
+	background: var(--github-color);
+}
+.twitter .tooltip:before,
+.twitter:hover i,
+.twitter .tooltip {
+	background: var(--twitter-color);
+}
+.instagram .tooltip:before,
+.instagram:hover i,
+.instagram .tooltip {
+	background: var(--instagram-color);
+}
+.youtube .tooltip:before,
+.youtube:hover i,
+.youtube .tooltip {
+	background: var(--youtube-color);
+}
